@@ -1,5 +1,9 @@
 ARG BUILD_FROM=hassioaddons/base:7.0.2
-# hadolint ignore=DL3006
+ARG ARCH=amd64
+ARG VERSION=2.16.0
+ARG BUILD_DATE
+ARG BUILD_REF
+
 FROM ${BUILD_FROM}
 
 RUN apk --no-cache add --virtual build-dependencies wget \
@@ -11,16 +15,25 @@ RUN apk --no-cache add --virtual build-dependencies wget \
     && tar --strip-components=1 -xzf prometheus.tar.gz \
     && mkdir -p /etc/prometheus /usr/share/prometheus \
     && mv prometheus promtool   /bin/ \
-    && mv prometheus.yml        /etc/prometheus/prometheus.yml \
+    && rm prometheus.yml \
     && mv consoles console_libraries NOTICE LICENSE /usr/share/prometheus/ \
     && ln -s /usr/share/prometheus/console_libraries /usr/share/prometheus/consoles/ /etc/prometheus/ \
     && rm -rf /tmp/install
 
-EXPOSE     9090
-VOLUME     [ "/prometheus" ]
-WORKDIR    /prometheus
-ENTRYPOINT [ "/bin/prometheus" ]
-CMD        [ "--config.file=/etc/prometheus/prometheus.yml", \
-             "--storage.tsdb.path=/prometheus", \
-             "--web.console.libraries=/usr/share/prometheus/console_libraries", \
-             "--web.console.templates=/usr/share/prometheus/consoles" ]
+# Labels
+LABEL \
+    io.hass.name="Prometheus" \
+    io.hass.description="Prometheus add-on for hass.io" \
+    io.hass.arch="${ARCH}" \
+    io.hass.type="addon" \
+    io.hass.version=${VERSION} \
+    maintainer="Wicaksono Trihatmaja <trihatmaja@gmail.com>" \
+    org.label-schema.description="Prometheus add-on for hass.io" \
+    org.label-schema.build-date=${BUILD_DATE} \
+    org.label-schema.name="Prometheus" \
+    org.label-schema.schema-version="1.0" \
+    org.label-schema.url="https://addons.community" \
+    org.label-schema.usage="https://github.com/hassio-addons/addon-example/tree/master/README.md" \
+    org.label-schema.vcs-ref=${BUILD_REF} \
+    org.label-schema.vcs-url="https://github.com/hassio-addons/addon-example" \
+    org.label-schema.vendor="Community Hass.io Addons"

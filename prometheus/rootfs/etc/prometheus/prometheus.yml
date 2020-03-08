@@ -1,0 +1,27 @@
+# my global config
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s 
+
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+
+rule_files:
+
+remote_write:
+  - url: '${remote_write}'
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+    - targets: ['localhost:9090']
+  - job_name: 'home-assistant'
+    metrics_path: /api/prometheus
+    bearer_token: '${token}'
+    static_configs:
+    - targets: ['${target}']
+      labels:
+        latitude: '${latitude}'
+        longitude: '${longitude}'

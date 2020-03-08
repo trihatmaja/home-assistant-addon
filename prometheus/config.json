@@ -1,0 +1,35 @@
+{
+  "name": "Prometheus",
+  "version": "dev",
+  "slug": "prometheus",
+  "description": "Prometheus server add-on",
+  "url": "https://github.com/trihatmaja/addon-prometheus",
+  "startup": "application",
+  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
+  "boot": "auto",
+  "hassio_api": true,
+  "hassio_role": "admin",
+  "options": {
+    "log_level": "info",
+    "token": "",
+    "latitude": "",
+    "longitude": "",
+    "remote_write": "",
+  },
+  "schema": {
+    "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
+    "token": "str",
+    "latitude": "str?",
+    "longitude": "str?",
+    "remote_write": "str?",
+  },
+  "ports": {
+    "9090/tcp": null
+  },
+  "ports_description": {
+    "9090/tcp": "Web interface (Not required for Hass.io Ingress)"
+  },
+  "host_network": true,
+  "webui": "http://[HOST]:[PORT:9090]",
+  "version": "2.16.0",
+}
