@@ -14,14 +14,14 @@
     "token": "",
     "latitude": "",
     "longitude": "",
-    "remote_write": "",
+    "remote_write": ""
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
     "token": "str",
     "latitude": "str?",
     "longitude": "str?",
-    "remote_write": "str?",
+    "remote_write": "str?"
   },
   "ports": {
     "9090/tcp": null
