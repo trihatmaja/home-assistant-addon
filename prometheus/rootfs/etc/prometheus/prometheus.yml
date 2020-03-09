@@ -11,7 +11,7 @@ alerting:
 rule_files:
 
 remote_write:
-  - url: '${remote_write}'
+  - url: '%%remote_write%%'
 
 scrape_configs:
   - job_name: 'prometheus'
@@ -19,9 +19,9 @@ scrape_configs:
     - targets: ['localhost:9090']
   - job_name: 'home-assistant'
     metrics_path: /api/prometheus
-    bearer_token: '${token}'
+    bearer_token: '%%token%%'
     static_configs:
-    - targets: ['${target}']
+    - targets: ['%%target_ip%%:%%target_port%%']
       labels:
-        latitude: '${latitude}'
-        longitude: '${longitude}'
+        latitude: '%%latitude%%'
+        longitude: '%%longitude%%'

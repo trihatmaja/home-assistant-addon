@@ -1,8 +1,10 @@
 ARG BUILD_FROM=hassioaddons/base:7.0.2
 ARG ARCH=amd64
 ARG VERSION=2.16.0
+ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_REF
+ARG BUILD_VERSION
 
 FROM ${BUILD_FROM}
 
@@ -24,9 +26,9 @@ RUN apk --no-cache add --virtual build-dependencies wget \
 LABEL \
     io.hass.name="Prometheus" \
     io.hass.description="Prometheus add-on for hass.io" \
-    io.hass.arch="${ARCH}" \
+    io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
-    io.hass.version=${VERSION} \
+    io.hass.version=${BUILD_VERSION} \
     maintainer="Wicaksono Trihatmaja <trihatmaja@gmail.com>" \
     org.label-schema.description="Prometheus add-on for hass.io" \
     org.label-schema.build-date=${BUILD_DATE} \
