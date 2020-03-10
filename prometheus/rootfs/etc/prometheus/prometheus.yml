@@ -3,13 +3,6 @@ global:
   scrape_interval:     15s
   evaluation_interval: 15s 
 
-alerting:
-  alertmanagers:
-  - static_configs:
-    - targets:
-
-rule_files:
-
 remote_write:
   - url: '%%remote_write%%'
 

@@ -7,4 +7,4 @@
 bashio::log.info "Starting Prometheus..."
 
 # Run the prometheus
-exec
+exec /bin/prometheus --config.file /etc/prometheus/prometheus.yml
