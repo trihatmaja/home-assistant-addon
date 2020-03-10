@@ -21,7 +21,7 @@
     "remote_write": ""
   },
   "schema": {
-    "scrape_interval":"int(2,)",
+    "scrape_interval":"int(5,)",
     "token": "str",
     "targets":"str",
     "latitude": "str?",
