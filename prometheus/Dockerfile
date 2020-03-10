@@ -12,7 +12,7 @@ FROM ${BUILD_FROM}
 RUN apk --no-cache add --virtual build-dependencies wget coreutils=8.31-r0 \
     && apk --no-cache add ca-certificates \
     && mkdir -p /tmp/install /tmp/dist \
-    && wget -O /tmp/install/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v$VERSION/prometheus-$VERSION.linux-$ARCH.tar.gz \
+    && wget -O /tmp/install/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v${VERSION}/prometheus-${VERSION}.linux-${ARCH}.tar.gz \
     && apk del build-dependencies \
     && cd /tmp/install \
     && tar --strip-components=1 -xzf prometheus.tar.gz \
