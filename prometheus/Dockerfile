@@ -5,11 +5,11 @@ ARG VERSION=2.16.0
 ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_REF
-ARG BUILD_VERSION
+ARG BUILD_VERSION=${VERSION}
 
 FROM ${BUILD_FROM}
 
-RUN apk --no-cache add --virtual build-dependencies wget \
+RUN apk --no-cache add --virtual build-dependencies wget coreutils=8.31-r0 \
     && apk --no-cache add ca-certificates \
     && mkdir -p /tmp/install /tmp/dist \
     && wget -O /tmp/install/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v$VERSION/prometheus-$VERSION.linux-$ARCH.tar.gz \
