@@ -30,13 +30,6 @@
     "longitude": "str?",
     "remote_write": "str?"
   },
-  "ports": {
-    "9090/tcp": null
-  },
-  "ports_description": {
-    "9090/tcp": "Web interface (Not required for Hass.io Ingress)"
-  },
   "host_network": true,
-  "webui": "http://[HOST]:[PORT:9090]",
   "version": "2.16.0"
 }
