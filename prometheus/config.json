@@ -13,6 +13,7 @@
   "ingress": true,
   "ingress_port": 0,
   "options": {
+    "log_level": "info",
     "scrape_interval": 15,
     "targets": "",
     "token": "",
@@ -21,6 +22,7 @@
     "remote_write": ""
   },
   "schema": {
+    "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
     "scrape_interval":"int(5,)",
     "token": "str",
     "targets":"str",
