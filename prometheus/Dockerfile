@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:7.0.2
+ARG BUILD_FROM=hassioaddons/base:7.0.3
 ARG ARCH=amd64
 ARG VERSION=2.16.0
 ARG BUILD_ARCH
