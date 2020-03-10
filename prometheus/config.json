@@ -15,7 +15,6 @@
   "options": {
     "log_level": "info",
     "scrape_interval": 15,
-    "targets": "",
     "token": "",
     "latitude": "",
     "longitude": "",
@@ -25,7 +24,6 @@
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
     "scrape_interval":"int(5,)",
     "token": "str",
-    "targets":"str",
     "latitude": "str?",
     "longitude": "str?",
     "remote_write": "str?"

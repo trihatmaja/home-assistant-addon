@@ -22,6 +22,12 @@ target_port = $(curl -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "C
 sed -i "s/%%target_ip%%/${target_ip}/g" /etc/prometheus/prometheus.yml
 sed -i "s/%%target_port%%/${target_port}/g" /etc/prometheus/prometheus.yml
 
+if bashio::var.has_value "${token}"; then
+	sed -i "s/%%token%%/${token}/g" /etc/prometheus/prometheus.yml
+else
+	sed -i "s/%%token%%/${SUPERVISOR_TOKEN}/g" /etc/prometheus/prometheus.yml
+fi
+
 if bashio::var.has_value "${latitude}"; then
 	sed -i "s/%%latitude%%/${latitude}/g" /etc/prometheus/prometheus.yml
 else
