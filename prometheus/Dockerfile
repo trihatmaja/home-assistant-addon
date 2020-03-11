@@ -9,6 +9,9 @@ ARG BUILD_VERSION
 
 FROM ${BUILD_FROM}
 
+# Copy root filesystem
+COPY rootfs /
+
 RUN apk --no-cache add --virtual build-dependencies wget coreutils=8.31-r0 \
     && apk --no-cache add ca-certificates \
     && mkdir -p /tmp/install /tmp/dist \
