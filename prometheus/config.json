@@ -32,7 +32,7 @@
   "version": "2.16.0",
   "webui": "http://[HOST]:[PORT:9089]",
   "ports": {
-    "9089/tcp": null
+    "9089/tcp": 9089
   },
   "ports_description": {
     "9089/tcp": "Web interface (Not required for Hass.io Ingress)"
