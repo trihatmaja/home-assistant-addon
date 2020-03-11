@@ -11,7 +11,7 @@
   "hassio_role": "homeassistant",
   "homeassistant_api": true,
   "ingress": true,
-  "ingress_port": 0,
+  "ingress_port": 8099,
   "options": {
     "log_level": "info",
     "scrape_interval": 15,
