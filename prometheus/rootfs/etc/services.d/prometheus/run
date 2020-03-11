@@ -13,4 +13,4 @@ ingress_port=$(bashio::addon.ingress_port)
 ingress_interface=$(bashio::addon.ip_address)
 
 # Run the prometheus
-exec /bin/prometheus --config.file /etc/prometheus/prometheus.yml --web.external-url http://ingress_interface:ingress_port
+exec /bin/prometheus --config.file /etc/prometheus/prometheus.yml --web.external-url http://$(ingress_interface):$(ingress_port)
