@@ -1,5 +1,5 @@
 ARG BUILD_FROM=hassioaddons/base-amd64:7.0.3
-ARG ARCH=amd64
+ARG ARCH=armv7
 ARG VERSION=2.16.0
 
 ARG BUILD_ARCH
@@ -15,7 +15,7 @@ COPY rootfs /
 RUN apk --no-cache add --virtual build-dependencies wget coreutils=8.31-r0 \
     && apk --no-cache add ca-certificates \
     && mkdir -p /tmp/install /tmp/dist \
-    && wget -O /tmp/install/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v2.16.0/prometheus-2.16.0.linux-amd64.tar.gz \
+    && wget -O /tmp/install/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v2.16.0/prometheus-2.16.0.linux-armv7.tar.gz \
     && apk del build-dependencies \
     && cd /tmp/install \
     && tar --strip-components=1 -xzf prometheus.tar.gz \
