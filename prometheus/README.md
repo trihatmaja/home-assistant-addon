@@ -23,7 +23,7 @@ Follow these steps to get the add-on installed on your system:
 2. Have some patience and wait a couple of minutes.
 3. Check the add-on log output to see the result.
 
-If the log ends with `Configuration check finished - no error found! :)`,
+If the log ends with `no error found! :)`,
 it means the check against your configuration passes on the specified
 Home Assistant version.
 
@@ -32,15 +32,41 @@ Home Assistant version.
 Add-on configuration:
 
 ```yaml
-version: latest
+"log_level": "info",
+"scrape_interval": 15,
+"token": "",
+"latitude": "",
+"longitude": "",
+"remote_write": ""
 ```
 
-### Option: `version` (required)
+### Option: `log_level`
 
-The version of Home Assistant that want to check your configuration against.
+The log level of the Prometheus addons
 
-Setting this option to `latest` will result in checking your configuration
-against the latest stable release of Home Assistant.
+Setting this option to `info` will result in print all the log.
+
+### Option: `scrape_interval` (seconds)
+
+The interval for prometheus server to scrap the metrics in seconds. The default value is 15 seconds
+
+
+### Option: `token`
+
+The long lived token use to access Home-Assistant api.
+
+### Option: `latitude`
+
+The latitude of current Home-Assistant.
+
+### Option: `longitude`
+
+The longitude of current Home-Assistant.
+
+### Option: `remote_write`
+
+The url for the remote prometheus db.
+
 
 ## Known issues and limitations
 
