@@ -12,7 +12,7 @@ FROM ${BUILD_FROM}
 # Copy root filesystem
 COPY rootfs /
 
-RUN apk --no-cache add --virtual build-dependencies wget coreutils=8.31-r0 \
+RUN apk --no-cache add --virtual build-dependencies wget coreutils=8.31-r0 nginx=1.16.1-r6 \ \
     && apk --no-cache add ca-certificates \
     && mkdir -p /tmp/install /tmp/dist \
     && wget -O /tmp/install/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v2.16.0/prometheus-2.16.0.linux-armv7.tar.gz \
