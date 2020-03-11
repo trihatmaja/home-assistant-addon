@@ -5,5 +5,7 @@
 # ==============================================================================
 declare dns_host
 
+mkdir -p /var/log/nginx
+
 dns_host=$(bashio::dns.host)
-sed -i "s/%%dns_host%%/${dns_host}/g" /etc/nginx/nginx.conf
+sed -i "s#%%dns_host%%#${dns_host}#g" /etc/nginx/nginx.conf
