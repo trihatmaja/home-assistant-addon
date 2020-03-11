@@ -11,13 +11,13 @@ declare remote_write
 declare target
 declare port
 
-token = $(bashio::config 'token')
-latitude = $(bashio::config 'latitude')
-longitude = $(bashio::config 'longitude')
-remote_write = $(bashio::config 'remote_write')
+token=$(bashio::config 'token')
+latitude=$(bashio::config 'latitude')
+longitude=$(bashio::config 'longitude')
+remote_write=$(bashio::config 'remote_write')
 
-target_ip = $(curl -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" -s 'http://supervisor/core/info' | jq -r '.data.ip_address')
-target_port = $(curl -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" -s 'http://supervisor/core/info' | jq -r '.data.port')
+target_ip=$(curl -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" -s 'http://supervisor/core/info' | jq -r '.data.ip_address')
+target_port=$(curl -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" -s 'http://supervisor/core/info' | jq -r '.data.port')
 
 sed -i "s/%%target_ip%%/${target_ip}/g" /etc/prometheus/prometheus.yml
 sed -i "s/%%target_port%%/${target_port}/g" /etc/prometheus/prometheus.yml
