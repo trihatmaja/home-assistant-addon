@@ -30,12 +30,12 @@
   },
   "host_network": true,
   "version": "2.16.0",
-  "webui": "http://[HOST]:[PORT:9090]",
+  "webui": "http://[HOST]:[PORT:9089]",
   "ports": {
-    "9090/tcp": null
+    "9089/tcp": null
   },
   "ports_description": {
-    "9090/tcp": "Web interface (Not required for Hass.io Ingress)"
+    "9089/tcp": "Web interface (Not required for Hass.io Ingress)"
   },
   "panel_icon": "mdi:monitor"
 }
