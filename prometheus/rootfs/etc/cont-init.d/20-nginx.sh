@@ -6,6 +6,4 @@
 declare dns_host
 
 dns_host=$(bashio::dns.host)
-ingress_port=$(bashio::addon.ingress_port)
 sed -i "s/%%dns_host%%/${dns_host}/g" /etc/nginx/nginx.conf
-sed -i "s/%%port%%/${ingress_port}/g" /etc/nginx/nginx.conf

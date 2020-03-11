@@ -10,8 +10,6 @@
   "hassio_api": true,
   "hassio_role": "manager",
   "homeassistant_api": true,
-  "ingress": true,
-  "ingress_port": 0,
   "options": {
     "log_level": "info",
     "scrape_interval": 15,
@@ -30,12 +28,12 @@
   },
   "host_network": true,
   "version": "2.16.0",
-  "webui": "http://[HOST]:[PORT:9089]",
+  "webui": "http://[HOST]:[PORT:9090]",
   "ports": {
-    "9089/tcp": 0
+    "9090/tcp": 9090
   },
   "ports_description": {
-    "9089/tcp": "Web interface (Not required for Hass.io Ingress)"
+    "9090/tcp": "Web interface (Not required for Hass.io Ingress)"
   },
   "panel_icon": "mdi:monitor"
 }
