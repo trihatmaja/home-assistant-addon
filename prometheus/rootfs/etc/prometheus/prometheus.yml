@@ -11,10 +11,10 @@ scrape_configs:
     static_configs:
     - targets: ['localhost:9090']
   - job_name: 'home-assistant'
-    metrics_path: /api/prometheus
+    metrics_path: /core/api/prometheus
     bearer_token: '%%token%%'
     static_configs:
-    - targets: ['%%target_ip%%:%%target_port%%']
+    - targets: ['%%target%%']
       labels:
         latitude: '%%latitude%%'
         longitude: '%%longitude%%'
