@@ -4,6 +4,9 @@
 # Runs the nginx daemon
 # ==============================================================================
 
+# Wait for Prometheus to start
+bashio::net.wait_for 9090
+
 bashio::log.info "Starting Nginx..."
 
 exec nginx
