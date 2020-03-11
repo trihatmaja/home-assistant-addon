@@ -29,5 +29,13 @@
     "remote_write": "str?"
   },
   "host_network": true,
-  "version": "2.16.0"
+  "version": "2.16.0",
+  "webui": "http://[HOST]:[PORT:9090]",
+  "ports": {
+    "9090/tcp": null
+  },
+  "ports_description": {
+    "9090/tcp": "Web interface (Not required for Hass.io Ingress)"
+  },
+  "panel_icon": "mdi:monitor"
 }

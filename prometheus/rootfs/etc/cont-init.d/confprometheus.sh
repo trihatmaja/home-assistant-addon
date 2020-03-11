@@ -41,7 +41,7 @@ else
 fi
 
 if bashio::var.has_value "${remote_write}"; then
-	sed -i "s/%%remote_write%%/${remote_write}/g" /etc/prometheus/prometheus.yml
+	sed -i "s#%%remote_write%%#${remote_write}#g" /etc/prometheus/prometheus.yml
 else
 	sed -i '/%%remote_write%%/d' /etc/prometheus/prometheus.yml
 	sed -i '/url:/d' /etc/prometheus/prometheus.yml
