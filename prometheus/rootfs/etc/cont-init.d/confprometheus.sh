@@ -10,11 +10,13 @@ declare longitude
 declare remote_write
 declare target
 declare port
+declare scrape_interval
 
 token=$(bashio::config 'token')
 latitude=$(bashio::config 'latitude')
 longitude=$(bashio::config 'longitude')
 remote_write=$(bashio::config 'remote_write')
+scrape_interval=$(bashio::config 'scrape_interval')
 
 target_ip=$(curl -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" -s 'http://supervisor/core/info' | jq -r '.data.ip_address')
 target_port=$(curl -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" -s 'http://supervisor/core/info' | jq -r '.data.port')
@@ -26,6 +28,12 @@ if bashio::var.has_value "${token}"; then
 	sed -i "s/%%token%%/${token}/g" /etc/prometheus/prometheus.yml
 else
 	sed -i "s/%%token%%/${SUPERVISOR_TOKEN}/g" /etc/prometheus/prometheus.yml
+fi
+
+if bashio::var.has_value "${scrape_interval}"; then
+	sed -i "s/%%scrape_interval%%/${scrape_interval}/g" /etc/prometheus/prometheus.yml
+else
+	sed -i "s/%%scrape_interval%%/15/g" /etc/prometheus/prometheus.yml
 fi
 
 if bashio::var.has_value "${latitude}"; then

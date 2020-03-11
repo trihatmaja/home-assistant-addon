@@ -1,6 +1,6 @@
 # my global config
 global:
-  scrape_interval:     15s
+  scrape_interval: %%scrape_interval%%s
   evaluation_interval: 15s 
 
 remote_write:
