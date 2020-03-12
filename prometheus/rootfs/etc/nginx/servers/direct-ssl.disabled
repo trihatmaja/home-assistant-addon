@@ -1,5 +1,5 @@
 server {
-    listen %%ingress_entry%% default_server ssl http2;
+    listen 80 default_server ssl;
 
     include /etc/nginx/includes/server_params.conf;
     include /etc/nginx/includes/ssl_params.conf;
@@ -9,6 +9,11 @@ server {
     ssl_certificate_key /ssl/%%keyfile%%;
 
     location / {
-        proxy_pass http://backend;
+        return 302 $scheme://$http_host%%ingress_entry%%/;
     }
+    location %%ingress_entry%% {
+        rewrite  ^%%ingress_entry%%/(.*)  /$1 break;
+        proxy_pass http://backend/;
+    }
+
 }
