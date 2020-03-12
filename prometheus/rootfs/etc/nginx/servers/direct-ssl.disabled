@@ -1,5 +1,5 @@
 server {
-    listen %%port%% default_server ssl http2;
+    listen %%ingress_entry%% default_server ssl http2;
 
     include /etc/nginx/includes/server_params.conf;
     include /etc/nginx/includes/ssl_params.conf;

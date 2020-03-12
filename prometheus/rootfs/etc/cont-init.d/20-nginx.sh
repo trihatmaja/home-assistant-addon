@@ -6,9 +6,11 @@
 declare port
 declare certfile
 declare dns_host
+declare ingress_entry
 declare ingress_interface
 declare ingress_port
 declare keyfile
+
 
 port=$(bashio::addon.port 80)
 if bashio::var.has_value "${port}"; then
@@ -26,7 +28,8 @@ if bashio::var.has_value "${port}"; then
         mv /etc/nginx/servers/direct.disabled /etc/nginx/servers/direct.conf
     fi
 
-    sed -i "s/%%port%%/${port}/g" /etc/nginx/servers/direct.conf
+    ingress_entry=$(bashio::addon.ingress_entry)
+    sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/direct.conf
 fi
 
 ingress_port=$(bashio::addon.ingress_port)

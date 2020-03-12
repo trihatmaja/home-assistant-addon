@@ -3,8 +3,12 @@
 # Home Assistant Community Add-on: prometheus
 # Runs the prometheus
 # ==============================================================================
+declare -a options
+
+options+=(--config.file="/etc/prometheus/prometheus.yml")
+options+=(--storage.tsdb.retention.time="15d")
 
 bashio::log.info "Starting Prometheus..."
 
 # Run the prometheus
-exec /bin/prometheus --config.file /etc/prometheus/prometheus.yml
+exec /bin/prometheus "${options[@]}"
