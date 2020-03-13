@@ -9,6 +9,6 @@ server {
     }
     location %%ingress_entry%% {
         rewrite  ^%%ingress_entry%%/(.*)  /$1 break;
-        proxy_pass http://backend/;
+        proxy_pass http://backend;
     }
 }
