@@ -18,10 +18,16 @@
     "token": "",
     "latitude": "",
     "longitude": "",
-    "remote_write": ""
+    "remote_write": "",
+    "ssl": true,
+    "certfile": "fullchain.pem",
+    "keyfile": "privkey.pem"
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
+    "certfile": "str",
+    "keyfile": "str",
+    "ssl": "bool",
     "scrape_interval":"int(5,)",
     "token": "str",
     "latitude": "str?",
