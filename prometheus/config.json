@@ -42,6 +42,6 @@
     "80/tcp": "Web interface (Not required for Hass.io Ingress)"
   },
   "panel_title": "Prometheus",
-  "webui":"[PROTO:ssl]://[HOST]:[PORT:9090]/graph",
+  "webui":"[PROTO:ssl]://[HOST]:[PORT:80]/",
   "panel_icon": "mdi:monitor"
 }
