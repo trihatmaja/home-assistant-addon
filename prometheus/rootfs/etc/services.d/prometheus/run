@@ -4,9 +4,17 @@
 # Runs the prometheus
 # ==============================================================================
 declare -a options
+declare ingress_interface
+declare ingress_port
+declare ingress_entry
+
+ingress_port=$(bashio::addon.ingress_port)
+ingress_interface=$(bashio::addon.ip_address)
+ingress_entry=$(bashio::addon.ingress_entry)
 
 options+=(--config.file="/etc/prometheus/prometheus.yml")
 options+=(--storage.tsdb.retention.time="15d")
+options+=(--web.external-url="http://${ingress_interface}:${ingress_port}${ingress_entry}")
 
 bashio::log.info "Starting Prometheus..."
 
