@@ -4,10 +4,5 @@
     "amd64": "hassioaddons/base-amd64:7.0.3",
     "armv7": "hassioaddons/base-armv7:7.0.3"
   },
-  "prom_arch": {
-    "aarch64": "armv7",
-    "amd64": "amd64",
-    "armv7": "armv7"
-  },
   "args": {}
 }
