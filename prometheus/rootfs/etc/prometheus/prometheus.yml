@@ -9,7 +9,7 @@ remote_write:
 scrape_configs:
   - job_name: 'prometheus'
     static_configs:
-    - targets: ['localhost:9090']
+    - targets: ['localhost:9090%%ingress_entry%%']
   - job_name: 'home-assistant'
     metrics_path: /core/api/prometheus
     bearer_token: '%%token%%'
