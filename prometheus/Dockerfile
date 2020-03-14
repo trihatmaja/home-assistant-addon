@@ -1,4 +1,7 @@
 ARG BUILD_FROM=hassioaddons/base:7.0.3
+
+FROM ${BUILD_FROM}
+
 ARG PROM_ARCH=armv7
 ARG PROM_VERSION=2.16.0
 
@@ -7,15 +10,13 @@ ARG BUILD_DATE
 ARG BUILD_REF
 ARG BUILD_VERSION
 
-FROM ${BUILD_FROM}
-
 # Copy root filesystem
 COPY rootfs /
 
 RUN apk --no-cache add --virtual build-dependencies wget coreutils=8.31-r0 \
     && apk --no-cache add ca-certificates nginx=1.16.1-r6 \
     && mkdir -p /tmp/install /tmp/dist \
-    && wget -O /tmp/install/prometheus.tar.gz http://10.10.1.13:9090/prometheus-2.16.0.linux-armv7.tar.gz \
+    && wget -O /tmp/install/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v${PROM_VERSION}/prometheus-${PROM_VERSION}.linux-${PROM_ARCH}.tar.gz \
     && apk del build-dependencies \
     && cd /tmp/install \
     && tar --strip-components=1 -xzf prometheus.tar.gz \
