@@ -42,13 +42,13 @@ fi
 if bashio::var.has_value "${latitude}"; then
 	sed -i "s/%%latitude%%/${latitude}/g" /etc/prometheus/prometheus.yml
 else
-	sed -i '/%%latitude%%/d' /etc/prometheus/prometheus.yml
+	sed -i "s/%%latitude%%/${latitude_conf}/g" /etc/prometheus/prometheus.yml
 fi
 
 if bashio::var.has_value "${longitude}"; then
 	sed -i "s/%%longitude%%/${longitude}/g" /etc/prometheus/prometheus.yml
 else
-	sed -i '/%%longitude%%/d' /etc/prometheus/prometheus.yml
+	sed -i "s/%%longitude%%/${longitude_conf}/g" /etc/prometheus/prometheus.yml
 fi
 
 if bashio::var.has_value "${remote_write}"; then
