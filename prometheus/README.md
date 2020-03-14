@@ -70,8 +70,7 @@ The url for the remote prometheus db.
 
 ## Known issues and limitations
 
-- Currently, this add-on only supports checking against Home Assistant >= 0.94
-  or less 0.91.
+- Need to findout
 
 ## Support
 
@@ -79,19 +78,9 @@ Got questions?
 
 You have several options to get them answered:
 
-- The [Home Assistant Discord Chat Server][discord].
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
-
 In case you've found a bug, please [open an issue on our GitHub][issue].
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
-[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[discord]: https://discord.gg/c5DvZ4e
-[forum]: https://community.home-assistant.io
-[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
-[issue]: https://github.com/home-assistant/hassio-addons/issues
-[reddit]: https://reddit.com/r/homeassistant
-[repository]: https://github.com/hassio-addons/repository
+[issue]: https://github.com/trihatmaja/addon-prometheus/issue
+[repository]: https://github.com/trihatmaja/addon-prometheus
