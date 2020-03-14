@@ -65,7 +65,7 @@ The longitude of current Home-Assistant.
 
 ### Option: `remote_write`
 
-The url for the external prometheus db such ![thanos prometheus][thanos] or ![victoria metrics][victoriametrics].
+The url for the external prometheus db such [thanos] or [victoriametrics].
 
 
 ## Known issues and limitations
