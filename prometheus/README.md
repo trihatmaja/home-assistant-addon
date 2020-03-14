@@ -2,17 +2,12 @@
 
 Prometheus server for Home Assistant.
 
-![Supports armv7 Architecture][armv7-shield]
-![Supports aarch64 Architecture][aarch64-shield]
-![Supports amd64 Architecture][amd64-shield]
+![Supports armv7 Architecture][armv7-shield] ![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield]
 
 
 ## About
 
-You can use this add-on to check whether your configuration files are valid against the
-new version of Home Assistant before you actually update your Home Assistant
-installation. This add-on will help you avoid errors due to breaking changes,
-resulting in a smooth update.
+You can use this add-on as an alternative to influxdb. This add-on support for the external prometheus to write your data.
 
 ## Installation
 
@@ -70,7 +65,7 @@ The longitude of current Home-Assistant.
 
 ### Option: `remote_write`
 
-The url for the remote prometheus db.
+The url for the external prometheus db such ![thanos prometheus][thanos] or ![victoria metrics][victoriametrics].
 
 
 ## Known issues and limitations
@@ -90,3 +85,5 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [issue]: https://github.com/trihatmaja/addon-prometheus/issue
 [repository]: https://github.com/trihatmaja/addon-prometheus
+[thanos]: https://thanos.io/
+[victoriametrics]: https://victoriametrics.com/
