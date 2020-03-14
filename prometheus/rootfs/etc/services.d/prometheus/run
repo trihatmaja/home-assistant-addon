@@ -14,7 +14,7 @@ ingress_entry=$(bashio::addon.ingress_entry)
 
 options+=(--config.file="/etc/prometheus/prometheus.yml")
 options+=(--storage.tsdb.retention.time="15d")
-options+=(--web.external-url="http://${ingress_interface}:${ingress_port}${ingress_entry}")
+# options+=(--web.external-url="http://${ingress_interface}:${ingress_port}${ingress_entry}")
 
 bashio::log.info "Starting Prometheus..."
 
