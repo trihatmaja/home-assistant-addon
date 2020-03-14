@@ -19,11 +19,13 @@ latitude=$(bashio::config 'latitude')
 longitude=$(bashio::config 'longitude')
 remote_write=$(bashio::config 'remote_write')
 scrape_interval=$(bashio::config 'scrape_interval')
+ingress_entry=$(bashio::addon.ingress_entry)
 
 latitude_conf=$(curl -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" -s 'http://supervisor/core/api/config' | jq -r '.data.latitude')
 longitude_conf=$(curl -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" -s 'http://supervisor/core/api/config' | jq -r '.data.longitude')
 
 sed -i "s#%%target%%#supervisor#g" /etc/prometheus/prometheus.yml
+sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/prometheus/prometheus.yml
 
 if bashio::var.has_value "${token}"; then
 	sed -i "s/%%token%%/${token}/g" /etc/prometheus/prometheus.yml
