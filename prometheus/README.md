@@ -65,12 +65,12 @@ The longitude of current Home-Assistant.
 
 ### Option: `remote_write`
 
-The url for the external prometheus db such [thanos] or [victoriametrics].
+The url for the external prometheus db such [Thanos][thanos] or [Victoria Metrics][victoriametrics]. For detail please read [prometheus remote endpoint and storage][remote-endpoint]
 
 
 ## Known issues and limitations
 
-- Need to findout
+- Need your help to identify
 
 ## Support
 
@@ -87,3 +87,4 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [repository]: https://github.com/trihatmaja/addon-prometheus
 [thanos]: https://thanos.io/
 [victoriametrics]: https://victoriametrics.com/
+[remote-endpoint]: https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage
