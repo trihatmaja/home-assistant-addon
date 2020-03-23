@@ -71,8 +71,9 @@ The url for the external prometheus db such [Thanos][thanos] or [Victoria Metric
 
 ## Grafana Integration
 
+This is how to integrate to grafana
 
-
+![Prometheus integration with Grafana in the Home Assistant Frontend][grafana-integration]
 
 ## Known issues and limitations
 
