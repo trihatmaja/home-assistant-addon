@@ -9,6 +9,8 @@ Prometheus server for Home Assistant.
 
 You can use this add-on as an alternative to influxdb. This add-on support for the external prometheus to write your data.
 
+![Prometheus in the Home Assistant Frontend][screenshot]
+
 ## Installation
 
 Follow these steps to get the add-on installed on your system:
@@ -67,6 +69,10 @@ The longitude of current Home-Assistant.
 
 The url for the external prometheus db such [Thanos][thanos] or [Victoria Metrics][victoriametrics]. For detail please read [prometheus remote endpoint and storage][remote-endpoint]
 
+## Grafana Integration
+
+
+
 
 ## Known issues and limitations
 
@@ -88,3 +94,5 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [thanos]: https://thanos.io/
 [victoriametrics]: https://victoriametrics.com/
 [remote-endpoint]: https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage
+[screenshot]: https://github.com/trihatmaja/addon-prometheus/raw/master/images/screenshot.png
+[grafana-integration]: https://github.com/trihatmaja/addon-prometheus/raw/master/images/integration.png
