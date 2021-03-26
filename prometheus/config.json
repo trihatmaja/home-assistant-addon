@@ -34,7 +34,7 @@
     "longitude": "str?",
     "remote_write": "str?"
   },
-  "version": "2.26.0",
+  "version": "2.25.2",
   "ports": {
     "80/tcp": null
   },
