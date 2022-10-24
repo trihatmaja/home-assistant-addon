@@ -69,4 +69,6 @@ if bashio::var.has_value "${additional_job_name}"; then
 	sed -i "s#%%additional_job_name%%#${additional_job_name}#g" /etc/prometheus/prometheus.yml
 	sed -i "s#%%additional_metrics_path%%#${additional_metrics_path}#g" /etc/prometheus/prometheus.yml
 	sed -i "s#%%additional_target%%#${additional_target}#g" /etc/prometheus/prometheus.yml
+else
+	sed -i '22d;23d;24d;25d' /etc/prometheus/prometheus.yml
 fi
