@@ -40,7 +40,7 @@
     "additional_metrics_path": "str?",
     "additional_target": "str?"
   },
-  "version": "2.25.2",
+  "version": "2.37.1",
   "ports": {
     "80/tcp": null
   },
