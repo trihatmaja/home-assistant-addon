@@ -38,7 +38,7 @@
     "remote_write": "str?",
     "additional_job_name": "str?",
     "additional_metrics_path": "str?",
-    "additional_target_url": "url"
+    "additional_target_url": "password?"
   },
   "version": "2.37.1",
   "ports": {
