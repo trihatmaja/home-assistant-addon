@@ -13,9 +13,7 @@ declare remote_write
 declare target
 declare port
 declare scrape_interval
-declare additional_job_name
-declare additional_metrics_path
-declare additional_target_url
+declare additional_job
 
 token=$(bashio::config 'token')
 latitude=$(bashio::config 'latitude')
@@ -27,9 +25,6 @@ ingress_entry=$(bashio::addon.ingress_entry)
 latitude_conf=$(curl -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" -s 'http://supervisor/core/api/config' | jq -r '.latitude')
 longitude_conf=$(curl -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" -s 'http://supervisor/core/api/config' | jq -r '.longitude')
 
-additional_job_name=$(bashio::config 'additional_job_name')
-additional_metrics_path=$(bashio::config 'additional_metrics_path')
-additional_target_url=$(bashio::config 'additional_target_host')
 
 sed -i "s#%%target%%#supervisor#g" /etc/prometheus/prometheus.yml
 # sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/prometheus/prometheus.yml
@@ -65,10 +60,20 @@ else
 	sed -i '/url:/d' /etc/prometheus/prometheus.yml
 fi
 
-if bashio::var.has_value "${additional_job_name}"; then
-	sed -i "s#%%additional_job_name%%#${additional_job_name}#g" /etc/prometheus/prometheus.yml
-	sed -i "s#%%additional_metrics_path%%#${additional_metrics_path}#g" /etc/prometheus/prometheus.yml
-	sed -i "s#%%additional_target%%#${additional_target_url}#g" /etc/prometheus/prometheus.yml
-else
-	sed -i '22d;23d;24d;25d' /etc/prometheus/prometheus.yml
-fi
+for job in $(bashio::config 'additional_job|keys'); do
+	if bashio::var.has_value "additional_job[${job}].name"; then
+		
+		job_name=$(bashio::config "additional_job[${job}].name")
+		metrics_path=$(bashio::config "additional_job[${job}].metrics_path")
+		targets=$(bashio::config "additional_job[${job}].targets")
+
+		# start append to the existing config
+		echo "
+		  - job_name: ${job_name}
+				metrics_path: ${metrics_path}
+				static_configs:
+				- targets: [\"${targets}\"]
+		" >> /etc/prometheus/prometheus.yml
+
+	fi
+done

@@ -19,7 +19,3 @@ scrape_configs:
       labels:
         latitude: '%%latitude%%'
         longitude: '%%longitude%%'
-  - job_name: '%%additional_job_name%%'
-    metrics_path: '/%%additional_metrics_path%%'
-    static_configs:
-      - targets: ['%%additional_target%%']
