@@ -22,4 +22,4 @@ scrape_configs:
   - job_name: '%%additional_job_name%%'
     metrics_path: '%%%additional_metrics_path%%'
     static_configs:
-      - targets: ['http://%%additional_target%%']
+      - targets: [%%additional_target%%]
