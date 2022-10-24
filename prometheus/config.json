@@ -24,7 +24,7 @@
     "keyfile": "privkey.pem",
     "additional_job_name": "",
     "additional_metrics_path": "",
-    "additional_target_ip": ""
+    "additional_target_url": ""
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
@@ -38,7 +38,7 @@
     "remote_write": "str?",
     "additional_job_name": "str?",
     "additional_metrics_path": "str?",
-    "additional_target_ip": "str?"
+    "additional_target_url": "url?"
   },
   "version": "2.37.1",
   "ports": {
