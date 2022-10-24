@@ -15,7 +15,7 @@ declare port
 declare scrape_interval
 declare additional_job_name
 declare additional_metrics_path
-decalre additional_target
+declare additional_target
 
 token=$(bashio::config 'token')
 latitude=$(bashio::config 'latitude')
