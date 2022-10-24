@@ -29,7 +29,7 @@ longitude_conf=$(curl -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "
 
 additional_job_name=$(bashio::config 'additional_job_name')
 additional_metrics_path=$(bashio::config 'additional_metrics_path')
-additional_target=$(bashio::config 'additional_target')
+additional_target=$(bashio::config 'additional_target_ip')
 
 sed -i "s#%%target%%#supervisor#g" /etc/prometheus/prometheus.yml
 # sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/prometheus/prometheus.yml
