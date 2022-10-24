@@ -21,7 +21,10 @@
     "remote_write": "",
     "ssl": true,
     "certfile": "fullchain.pem",
-    "keyfile": "privkey.pem"
+    "keyfile": "privkey.pem",
+    "additional_job_name": "",
+    "additional_metrics_path": "",
+    "additional_target": ""
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
@@ -32,7 +35,10 @@
     "token": "str",
     "latitude": "str?",
     "longitude": "str?",
-    "remote_write": "str?"
+    "remote_write": "str?",
+    "additional_job_name": "str?",
+    "additional_metrics_path": "str?",
+    "additional_target": "str?"
   },
   "version": "2.25.2",
   "ports": {
