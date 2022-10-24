@@ -14,7 +14,7 @@ ARG BUILD_VERSION
 COPY rootfs /
 
 RUN apk --no-cache add --virtual build-dependencies wget coreutils=8.31-r0 \
-    && apk --no-cache add ca-certificates nginx=1.16.1-r6 \
+    && apk --no-cache add ca-certificates nginx=1.16.1-r8 \
     && mkdir -p /tmp/install /tmp/dist \
     && wget -O /tmp/install/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v${PROM_VERSION}/prometheus-${PROM_VERSION}.linux-${PROM_ARCH}.tar.gz \
     && apk del build-dependencies \
