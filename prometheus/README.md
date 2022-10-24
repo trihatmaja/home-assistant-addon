@@ -39,7 +39,10 @@ Add-on configuration:
 "token": "",
 "latitude": "",
 "longitude": "",
-"remote_write": ""
+"remote_write": "",
+"additional_job_name": "",
+"additional_metrics_path": "",
+"additioanl_target_ip": ""
 ```
 
 ### Option: `log_level`
@@ -68,6 +71,18 @@ The longitude of current Home-Assistant.
 ### Option: `remote_write`
 
 The url for the external prometheus db such [Thanos][thanos] or [Victoria Metrics][victoriametrics]. For detail please read [prometheus remote endpoint and storage][remote-endpoint]
+
+### Option: `additional_job_name`
+
+The additional job name that this prometheus need to scrap
+
+### Option: `additional_metrics_path`
+
+The additional metrics path that the additional job needs
+
+### Option: `additional_target_ip`
+
+The target ip of additional job
 
 ## Grafana Integration
 
