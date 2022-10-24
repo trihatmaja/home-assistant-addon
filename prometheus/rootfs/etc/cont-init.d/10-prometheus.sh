@@ -68,12 +68,10 @@ for job in $(bashio::config 'additional_job|keys'); do
 		targets=$(bashio::config "additional_job[${job}].targets")
 
 		# start append to the existing config
-		echo "
-		  - job_name: ${job_name}
-				metrics_path: ${metrics_path}
-				static_configs:
-				- targets: [\"${targets}\"]
-		" >> /etc/prometheus/prometheus.yml
+		echo "  - job_name: ${job_name}" >> /etc/prometheus/prometheus.yml
+		echo "		metrics_path: ${metrics_path}" >> /etc/prometheus/prometheus.yml
+		echo "		static_configs:" >> /etc/prometheus/prometheus.yml
+		echo "		- targets: [\"${targets}\"]" >> /etc/prometheus/prometheus.yml
 
 	fi
 done
