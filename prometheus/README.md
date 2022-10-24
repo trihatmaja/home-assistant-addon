@@ -42,7 +42,7 @@ Add-on configuration:
 "remote_write": "",
 "additional_job_name": "",
 "additional_metrics_path": "",
-"additioanl_target_ip": ""
+"additioanl_target_url": ""
 ```
 
 ### Option: `log_level`
@@ -80,9 +80,9 @@ The additional job name that this prometheus need to scrap
 
 The additional metrics path that the additional job needs
 
-### Option: `additional_target_ip`
+### Option: `additional_target_url`
 
-The target ip of additional job
+The target url of additional job
 
 ## Grafana Integration
 
