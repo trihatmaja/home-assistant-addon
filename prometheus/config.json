@@ -44,7 +44,9 @@
       {
         "name": "str?",
         "metrics_path": "str?",
-        "targets": "str?"
+        "targets": "str?",
+        "username": "str?",
+        "password": "str?"
       }
     ]
   },
