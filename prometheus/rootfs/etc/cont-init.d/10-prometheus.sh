@@ -73,5 +73,15 @@ for job in $(bashio::config 'additional_job|keys'); do
 		echo "    static_configs:" >> /etc/prometheus/prometheus.yml
 		echo "    - targets: [\"${targets}\"]" >> /etc/prometheus/prometheus.yml
 
+		if bashio::var.has_value "additional_job[${job}].username"; then
+			username=$(bashio::config "additional_job[${job}].username")
+			password=$(bashio::config "additional_job[${job}].password")
+			
+			echo "    basic_auth:" >> /etc/prometheus/prometheus.yml
+			echo "      username: ${username}" >> /etc/prometheus/prometheus.yml
+			echo "      password: ${password}" >> /etc/prometheus/prometheus.yml
+		
+
+		fi
 	fi
 done

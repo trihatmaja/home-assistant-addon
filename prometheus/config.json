@@ -48,7 +48,7 @@
       }
     ]
   },
-  "version": "2.37.1",
+  "version": "2.37.5",
   "ports": {
     "80/tcp": null
   },
