@@ -53,8 +53,17 @@ else
 	sed -i "s/%%longitude%%/${longitude_conf}/g" /etc/prometheus/prometheus.yml
 fi
 
-if bashio::var.has_value "${remote_write}"; then
-	sed -i "s#%%remote_write%%#${remote_write}#g" /etc/prometheus/prometheus.yml
+if bashio::var.has_value "${remote_write_url}"; then
+	sed -i "s#%%remote_write%%#${remote_write_url}#g" /etc/prometheus/prometheus.yml
+
+	if bashio::var.has_value "${remote_write_username}"; then
+			sed -i "s#%%remote_write_username%%#${remote_write_username}#g" /etc/prometheus/prometheus.yml
+			sed -i "s#%%remote_write_password%%#${remote_write_password}#g" /etc/prometheus/prometheus.yml
+	else
+			sed -i '/basic_auth:/d' /etc/prometheus/prometheus.yml
+			sed -i '/username:/d' /etc/prometheus/prometheus.yml
+			sed -i '/password:/d' /etc/prometheus/prometheus.yml
+	fi
 else
 	sed -i '/%%remote_write%%/d' /etc/prometheus/prometheus.yml
 	sed -i '/url:/d' /etc/prometheus/prometheus.yml

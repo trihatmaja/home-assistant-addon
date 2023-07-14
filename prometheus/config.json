@@ -18,7 +18,9 @@
     "token": "",
     "latitude": "",
     "longitude": "",
-    "remote_write": "",
+    "remote_write_url": "",
+    "remote_write_username": "",
+    "remote_write_password": "",
     "ssl": true,
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem",
@@ -39,7 +41,9 @@
     "token": "str",
     "latitude": "str?",
     "longitude": "str?",
-    "remote_write": "str?",
+    "remote_write_url": "str?",
+    "remote_write_username": "str?",
+    "remote_write_password": "str?",
     "additional_job": [
       {
         "name": "str?",
@@ -50,7 +54,7 @@
       }
     ]
   },
-  "version": "2.37.5",
+  "version": "2.45.0",
   "ports": {
     "80/tcp": null
   },
