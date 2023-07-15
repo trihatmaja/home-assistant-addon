@@ -71,6 +71,10 @@ if bashio::var.has_value "${remote_write_url}"; then
 else
 	sed -i '/%%remote_write_url%%/d' /etc/prometheus/prometheus.yml
 	sed -i '/url:/d' /etc/prometheus/prometheus.yml
+	sed -i '/basic_auth:/d' /etc/prometheus/prometheus.yml
+	sed -i '/username:/d' /etc/prometheus/prometheus.yml
+	sed -i '/password:/d' /etc/prometheus/prometheus.yml
+
 fi
 
 for job in $(bashio::config 'additional_job|keys'); do
