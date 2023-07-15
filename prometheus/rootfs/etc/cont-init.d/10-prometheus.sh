@@ -9,7 +9,9 @@ declare latitude
 declare longitude
 declare latitude_conf
 declare longitude_conf
-declare remote_write
+declare remote_write_url
+declare remote_write_username
+declare remote_write_password
 declare target
 declare port
 declare scrape_interval
@@ -18,7 +20,9 @@ declare additional_job
 token=$(bashio::config 'token')
 latitude=$(bashio::config 'latitude')
 longitude=$(bashio::config 'longitude')
-remote_write=$(bashio::config 'remote_write')
+remote_write_url=$(bashio::config 'remote_write_url')
+remote_write_username=$(bashio::config 'remote_write_username')
+remote_write_password=$(bashio::config 'remote_write_password')
 scrape_interval=$(bashio::config 'scrape_interval')
 ingress_entry=$(bashio::addon.ingress_entry)
 
