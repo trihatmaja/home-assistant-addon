@@ -105,10 +105,10 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[issue]: https://github.com/trihatmaja/addon-prometheus/issues
-[repository]: https://github.com/trihatmaja/addon-prometheus
+[issue]: https://github.com/trihatmaja/home-assistant-addon/issues
+[repository]: https://github.com/trihatmaja/home-assistant-addon
 [thanos]: https://thanos.io/
 [victoriametrics]: https://victoriametrics.com/
 [remote-endpoint]: https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage
-[screenshot]: https://github.com/trihatmaja/addon-prometheus/raw/master/images/screenshot.png
-[grafana-integration]: https://github.com/trihatmaja/addon-prometheus/raw/master/images/integration.png
+[screenshot]: https://github.com/trihatmaja/home-assistant-addon/raw/master/prometheus/images/screenshot.png
+[grafana-integration]: https://github.com/trihatmaja/home-assistant-addon/raw/master/prometheus/images/integration.png
