@@ -54,7 +54,7 @@
       }
     ]
   },
-  "version": "2.45.3",
+  "version": "2.45.4",
   "ports": {
     "80/tcp": null
   },
