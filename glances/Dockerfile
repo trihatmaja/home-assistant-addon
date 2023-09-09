@@ -22,7 +22,7 @@ RUN \
         nginx=1.24.0-r6 \
         py3-packaging=23.1-r1 \
         py3-six=1.16.0-r6 \
-        python3=3.11.4-r0 \
+        python3=3.11.5-r0 \
     \
     && pip3 install -r /tmp/requirements.txt \
     \
